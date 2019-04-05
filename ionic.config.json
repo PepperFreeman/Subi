@@ -1,5 +1,7 @@
 {
   "name": "Subi",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
