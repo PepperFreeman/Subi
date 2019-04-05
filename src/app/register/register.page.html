@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Sign Up
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="register($event)">
+    <br><br>
+    <ion-list>
+      <ion-item>
+        <ion-input id="FirstName" type="text"  name="FirstName"  placeholder="First Name" [(ngModel)]="FirstName" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input id="LastName" type="text"  name="LastName"  placeholder="Last Name" [(ngModel)]="LastName" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input id="UserName" type="text"  name="UserName"  placeholder="Email" [(ngModel)]="UserName" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input id="Password" type="Password"  name="Password"  placeholder="Password" [(ngModel)]="Password" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input id="ConfirmPassword" type="Password"  name="ConfirmPassword"  placeholder="Confirm Password" [(ngModel)]="ConfirmPassword" required></ion-input>
+      </ion-item>
+    </ion-list>
+  </form>
+  <ion-button fill="solid" expand="block" color="dark" (click)="register()">Sign up</ion-button>
+  <ion-button routerLink="/home" fill="solid" expand="block" color="danger">Cancel</ion-button>
+</ion-content>
