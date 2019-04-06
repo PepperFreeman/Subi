@@ -1,35 +1,7 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>
-      Home
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <br><br> <br><br>
-  <form (ngSubmit)="LogIn($event)">
-    <ion-row>
-      <ion-col>
-        <ion-list>
-          <ion-item>
-            <ion-input id="Username"  type="text"  name="Username"  placeholder="Email" [(ngModel)]="Username" required></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-input id="Password" type="Password"  name="Password" placeholder="Password" [(ngModel)]="Password" required></ion-input>
-          </ion-item>
-        </ion-list>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col>
-        <ion-button fill="solid" expand="block" color="dark" Type="submit">Login</ion-button>
-        <ion-button routerLink="/register" fill="solid" expand="block" color="danger" >Register here</ion-button>
-      </ion-col>
-    </ion-row>
-  </form>
+  <ion-slides pager="false" autoplay="2000" loop="true" speed="1500" effect="fade">
+    <ion-slide class="slide-background swiper-no-swiping" [ngStyle]="{'background-image': 'url(assets/img/background/background-1.jpg)'}">
+      <div [ngStyle]="{'background-color':'green'}"><p>Test</p></div>
+    </ion-slide>
+  </ion-slides>
 </ion-content>
