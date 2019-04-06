@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthService} from '../auth.service';
 import {AngularFireAuth} from 'angularfire2/auth';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -9,9 +10,15 @@ import {AngularFireAuth} from 'angularfire2/auth';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
+  backgrounds = [
+    'assets/img/background/background-1.jpg',
+    'assets/img/background/background-2.jpg',
+    'assets/img/background/background-3.jpg',
+    'assets/img/background/background-4.jpg'
+  ];
   Username;
   Password;
-  constructor(private  Auth: AuthService, private router: Router, private firebase: AngularFireAuth) {
+  constructor(public formBuilder: FormBuilder, private  Auth: AuthService, private router: Router, private firebase: AngularFireAuth) {
   }
 
   ngOnInit() {
