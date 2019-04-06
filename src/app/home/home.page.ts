@@ -1,8 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {AuthService} from '../auth.service';
-import {AngularFireAuth} from 'angularfire2/auth';
-import { FormBuilder, Validators } from '@angular/forms';
+import {NavController} from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -10,33 +7,26 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-  backgrounds = [
-    'assets/img/background/background-1.jpg',
-    'assets/img/background/background-2.jpg',
-    'assets/img/background/background-3.jpg',
-    'assets/img/background/background-4.jpg'
+  private sports = [
+    'Football',
+    'Basketball',
+    'American-Football',
+    'Tennis',
+    'Cricket',
+    'Volleyball',
+    'Baseball',
+    'Lacrosse'
   ];
-  Username;
-  Password;
-  constructor(public formBuilder: FormBuilder, private  Auth: AuthService, private router: Router, private firebase: AngularFireAuth) {
+  public items: Array<{ url: string; name: string }> = [];
+  constructor(public navCtrl: NavController) {
+    for (let i = 0; i < this.sports.length; i++) {
+      this.items.push({
+        url: 'assets/img/' + this.sports[i] + '.jpg',
+        name: this.sports[i]
+      });
+    }
   }
 
   ngOnInit() {
-  }
-
-  LogIn(e) {
-    try {
-      const logintarget = e.target;
-      this.Username = logintarget.querySelector('#Username').value;
-      this.Password = logintarget.querySelector('#Password').value;
-      this.firebase.auth.signInWithEmailAndPassword(this.Username, this.Password).then(() => {
-        this.Auth.LoggedIn(true);
-        this.router.navigate(['/list']);
-      }).catch(() => {
-        alert('Please Enter a valid account.');
-      });
-    } catch (e) {
-      console.error(e);
-    }
   }
 }

@@ -1,50 +1,75 @@
-page-login-background-slider {
-  .scroll-content {
-    margin-top: 0 !important;
+ion-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 90px 1px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.square-100 {
+  width: 100%;
+  padding-bottom: 100%; }
+
+// Styling
+.square {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  background-color: #eee; }
+
+.grid {
+  display: block;
+  text-align: left;
+  font-size: 0;
+}
+
+.grid-cell {
+  display: inline-block;
+  width: 100%;
+  font-size: 16px; }
+
+.square {
+  height: 0;
+  overflow: hidden;
+  background-size: cover;
+}
+
+.title {
+  font-size: 100%;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 1px rgba(black, .6);
+  background: linear-gradient(rgba(#252243, 0), rgba(#252243, .8));
+
+  margin: 0;
+  padding: 36px 12px 12px;
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0; }
+
+.responsive {
+  float: left;
+  width: 20%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .responsive {
+    width: 25%;
   }
-  .logo {
-    width: 70%;
-    height: auto;
-    padding-top: 9vh;
-    margin-bottom: 15vh;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 33.3333%;
   }
-  span {
-    color: white;
-  }
-  .slide-background {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-color: transparent;
-  }
-  .slide-zoom {
-    background: rgba(32, 32, 32, 0.2) !important;
-    height: 100%;
-  }
-  ion-slides {
-    height: 100vh;
-  }
-  ion-item {
-    color: white !important;
-    padding-left: 10px !important;
-    margin-bottom: 10px;
-    background-color: transparent !important;
-    font-size: 0.9em;
-  }
-  ::-webkit-input-placeholder {
-    color: white !important;
-  }
-  .login-container {
-    color: white;
-    position: absolute;
-    top: 0;
-    padding: 10vw;
-    text-align: center;
-    width: 100%;
-    margin: 0 auto;
-    z-index: 2;
-  }
-  ion-button {
-    opacity: 0.8;
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 50%;
   }
 }

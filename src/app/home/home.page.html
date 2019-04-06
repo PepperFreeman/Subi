@@ -1,7 +1,25 @@
-<ion-content>
-  <ion-slides pager="false" autoplay="2000" loop="true" speed="1500" effect="fade">
-    <ion-slide class="slide-background swiper-no-swiping" [ngStyle]="{'background-image': 'url(assets/img/background/background-1.jpg)'}">
-      <div [ngStyle]="{'background-color':'green'}"><p>Test</p></div>
-    </ion-slide>
-  </ion-slides>
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Select Sport</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content no-padding no-margin>
+    <div class="grid">
+        <div class='grid-cell responsive' *ngFor="let image of items">
+            <button class="square square-100" [ngStyle]="{'background-image': 'url(' + image.url + ')'}" routerLink="/list">
+                <div class="title">
+                    {{image.name}}
+                </div>
+            </button>
+        </div>
+    </div>
+
 </ion-content>
+

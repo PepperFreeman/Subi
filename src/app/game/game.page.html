@@ -3,22 +3,34 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Select Sport</ion-title>
+    <ion-title>My Games</ion-title>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content no-padding no-margin>
-  <div class="grid">
-    <div class='grid-cell responsive' *ngFor="let image of items">
-      <button class="square square-100" [ngStyle]="{'background-image': 'url(' + image.url + ')'}" routerLink="/list">
-        <div class="title">
-          {{image.name}}
-        </div>
-      </button>
-    </div>
-  </div>
+<ion-content>
 
 </ion-content>
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="add">
+      <ion-icon name="add"></ion-icon>
+      <ion-label>a new game</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="my games">
+      <ion-icon name="football"></ion-icon>
+      <ion-label>my games</ion-label>
+      <ion-badge>2</ion-badge>
+    </ion-tab-button>
+
+    <ion-tab-button tab="public games">
+      <ion-icon name="people"></ion-icon>
+      <ion-label>public games</ion-label>
+      <ion-badge>3</ion-badge>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>

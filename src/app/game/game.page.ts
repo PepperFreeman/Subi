@@ -21,7 +21,7 @@ export class GamePage implements OnInit {
   constructor(public navCtrl: NavController) {
     for (let i = 0; i < this.sports.length; i++) {
       this.items.push({
-        url:'assets/img/' + this.sports[i] + '.jpg',
+        url: 'assets/img/' + this.sports[i] + '.jpg',
         name: this.sports[i]
       });
     }

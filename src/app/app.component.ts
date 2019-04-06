@@ -12,9 +12,9 @@ import {FormBuilder} from '@angular/forms';
 export class AppComponent {
   public appPages = [
     { title: 'Home', url: '/home', icon: 'home' },
-    { title: 'My Profile', url: '/', icon: 'home' },
-    { title: 'My games', url: '/', icon: 'home' },
-    { title: 'Settings', url: '/', icon: 'home' },
+    { title: 'My Profile', url: '/home', icon: 'home' },
+    { title: 'My games', url: '/game', icon: 'football' },
+    { title: 'Settings', url: '/home', icon: 'home' },
     { title: 'Game', url: '/game', icon: 'list'}
   ];
 
