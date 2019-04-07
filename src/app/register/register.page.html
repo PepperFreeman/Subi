@@ -10,27 +10,38 @@
 </ion-header>
 
 <ion-content padding>
-  <form (ngSubmit)="register($event)">
+  <form>
     <br><br>
     <ion-list>
       <ion-item>
-        <ion-input id="FirstName" type="text"  name="FirstName"  placeholder="First Name" [(ngModel)]="FirstName" required></ion-input>
+        <ion-input id="FirstName" type="text"  name="FirstName"  placeholder="    First Name" [(ngModel)]="FirstName" required></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input id="LastName" type="text"  name="LastName"  placeholder="Last Name" [(ngModel)]="LastName" required></ion-input>
+        <ion-input id="LastName" type="text"  name="LastName"  placeholder="    Last Name" [(ngModel)]="LastName" required></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input id="UserName" type="text"  name="UserName"  placeholder="Email" [(ngModel)]="UserName" required></ion-input>
+        <ion-input id="UserName" type="text"  name="UserName"  placeholder="    Email" [(ngModel)]="UserName" required></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label>Date of birth</ion-label>
-        <ion-datetime display-format="DD/MM/YYYY" picker-format="DDDD MMMM YYYY"></ion-datetime>
+        <ion-datetime placeholder="Date of birth" display-format="DD/MM/YYYY" picker-format="DDDD MMMM YYYY" [(ngModel)]="DateOfBirth" ></ion-datetime>
       </ion-item>
       <ion-item>
-        <ion-input id="Password" type="Password"  name="Password"  placeholder="Password" [(ngModel)]="Password" required></ion-input>
+        <ion-input id="Address1" type="text"  name="Address1"  placeholder="    Address line" [(ngModel)]="Address1" required></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input id="ConfirmPassword" type="Password"  name="ConfirmPassword"  placeholder="Confirm Password" [(ngModel)]="ConfirmPassword" required></ion-input>
+        <ion-input id="City" type="text"  name="City"  placeholder="    City" [(ngModel)]="City" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input id="State" type="text"  name="State"  placeholder="    State" [(ngModel)]="State" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input id="ZIP" type="text"  name="ZIP"  placeholder="    Zip Code" [(ngModel)]="ZIP" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input id="Password" type="Password"  name="Password"  placeholder="    Password" [(ngModel)]="Password" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input id="ConfirmPassword" type="Password"  name="ConfirmPassword"  placeholder="    Confirm Password" [(ngModel)]="ConfirmPassword" required></ion-input>
       </ion-item>
     </ion-list>
   </form>
