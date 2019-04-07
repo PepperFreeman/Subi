@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {AuthService} from '../auth.service';
 import {AngularFireAuth} from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
+import {AlertController} from '@ionic/angular';
 
 @Component({
   selector: 'app-register',
@@ -13,10 +14,16 @@ export class RegisterPage implements OnInit {
   FirstName;
   LastName;
   UserName;
+  DateOfBirth;
+  Address1;
+  Address2;
+  City;
+  State;
+  ZIP;
   Password;
   ConfirmPassword;
   constructor(private  router: Router, private Auth: AuthService, private firebaseA: AngularFireAuth,
-              private FirebaseDB: AngularFireDatabase) { }
+              private FirebaseDB: AngularFireDatabase,  public alertController: AlertController) { }
 
   ngOnInit() {
   }
@@ -28,17 +35,29 @@ export class RegisterPage implements OnInit {
           // @ts-ignore
           this.FirebaseDB.object(`Profile/${auth.uid}`).set({
             FirstName: this.FirstName,
-            LastName: this.LastName
+            LastName: this.LastName,
+            Address1: this.Address1,
+            City: this.City,
+            State: this.State,
+            ZIP: this.ZIP
           }) .then();
         });
-        alert('Registration Successful'); this.router.navigate(['/home']);
-      }).catch(() => {
-        alert('invalid email/password should be of 6 characters');
+        alert('Registration Successful'); this.router.navigate(['/login']);
+      }).catch(async () => {
+        const alert = await this.alertController.create({
+          header: 'Alert',
+          subHeader: '',
+          message: 'invalid email/password should be of 6 characters',
+          buttons: ['OK']
+        });
+
+        await alert.present();
       });
     } catch (e) {
       console.error(e);
     }
   }
+
   register() {
     if (this.Password === this.ConfirmPassword) {
 

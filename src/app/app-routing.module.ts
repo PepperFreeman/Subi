@@ -10,7 +10,6 @@ const routes: Routes = [
   { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule', canActivate: [AuthGuard] },
   { path: 'game', loadChildren: './game/game.module#GamePageModule', canActivate: [AuthGuard]  },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' }
-
 ];
 
 @NgModule({
