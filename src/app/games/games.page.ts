@@ -31,7 +31,7 @@ export class GamesPage implements OnInit {
           this.firebaseA.authState.subscribe(auth => {
             // @ts-ignore
             this.FirebaseDB.object(`Games/${auth.uid}`).set({
-              gameType: this.gameType.toString(),
+              gameType: this.gameType,
               playAddress: this.playAddress,
               people: this.people,
               time: this.GameTime,

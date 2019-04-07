@@ -33,13 +33,17 @@
 <ion-content padding>
   <form>
     <ion-list>
+        <!--
     <ion-label>Game Type</ion-label>
     <ion-select  [(ngModel)]="gameType">placeholder="Select One">
       <ion-select-option value="Football">Football</ion-select-option>
       <ion-select-option value="Basketball">Basketball</ion-select-option>
       <ion-select-option value="Soccer">Soccer</ion-select-option>
       <ion-select-option value="Tennis">Tennis</ion-select-option>
-    </ion-select>
+    </ion-select> -->
+        <ion-item>
+            <ion-input id="gameType"  type="text"  name="gameType"  placeholder="Please Enter the name of the game" [(ngModel)]="gameType" required></ion-input>
+        </ion-item>
         <ion-item>
             <ion-input id="GameTime"  type="time"  name="GameTime"  placeholder="Game Time" [(ngModel)]="GameTime" required></ion-input>
         </ion-item>
