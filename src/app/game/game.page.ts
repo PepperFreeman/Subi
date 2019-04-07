@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular'
+import {HomePage} from '../home/home.page';
 
 @Component({
   selector: 'app-game',
@@ -7,25 +7,11 @@ import { NavController } from '@ionic/angular'
   styleUrls: ['./game.page.scss'],
 })
 export class GamePage implements OnInit {
-  private sports = [
-    'Football',
-    'Basketball',
-    'American-Football',
-    'Tennis',
-    'Cricket',
-    'Volleyball',
-    'Baseball',
-    'Lacrosse'
-  ];
-  public items: Array<{ url: string; name: string }> = [];
-  constructor(public navCtrl: NavController) {
-    for (let i = 0; i < this.sports.length; i++) {
-      this.items.push({
-        url: 'assets/img/' + this.sports[i] + '.jpg',
-        name: this.sports[i]
-      });
-    }
-  }
+  tab1Root = HomePage;
+  tab2Root = HomePage;
+  tab3Root = HomePage;
+  constructor() {
+   }
 
   ngOnInit() {
   }

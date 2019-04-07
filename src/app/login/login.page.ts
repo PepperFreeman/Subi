@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../auth.service';
 import {Router} from '@angular/router';
 import {AngularFireAuth} from 'angularfire2/auth';
-
+import {AlertController} from '@ionic/angular';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+
   backgrounds = [
     'assets/img/background/background-1.jpg',
     'assets/img/background/background-2.jpg',
@@ -17,9 +18,19 @@ export class LoginPage implements OnInit {
   ];
   Username;
   Password;
-  constructor(private  Auth: AuthService, private router: Router, private firebase: AngularFireAuth) {
+  constructor(private  Auth: AuthService, private router: Router, private firebase: AngularFireAuth,
+              public alertController: AlertController) {
   }
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      subHeader: 'Subtitle',
+      message: 'This is an alert message.',
+      buttons: ['OK']
+    });
 
+    await alert.present();
+  }
   ngOnInit() {
   }
 
@@ -31,8 +42,15 @@ export class LoginPage implements OnInit {
       this.firebase.auth.signInWithEmailAndPassword(this.Username, this.Password).then(() => {
         this.Auth.LoggedIn(true);
         this.router.navigate(['/home']);
-      }).catch(() => {
-        alert('Please Enter a valid account.');
+      }).catch(async () => {
+        const alert = await this.alertController.create({
+          header: 'Alert',
+          subHeader: '',
+          message: 'Please Enter a valid account.',
+          buttons: ['OK']
+        });
+
+        await alert.present();
       });
     } catch (e) {
       console.error(e);

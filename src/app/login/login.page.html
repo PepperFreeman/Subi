@@ -1,24 +1,25 @@
-
 <ion-content>
-  <br><br> <br><br>
-  <form (ngSubmit)="LogIn($event)">
-    <ion-row>
-      <ion-col>
-        <ion-list>
-          <ion-item>
-            <ion-input id="Username"  type="text"  name="Username"  placeholder="Email" [(ngModel)]="Username" required></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-input id="Password" type="Password"  name="Password" placeholder="Password" [(ngModel)]="Password" required></ion-input>
-          </ion-item>
-        </ion-list>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-button fill="solid" expand="block" color="dark" Type="submit">Login</ion-button>
-        <ion-button routerLink="/register" fill="solid" expand="block" color="danger" >Register here</ion-button>
-      </ion-col>
-    </ion-row>
-  </form>
+  <video #player playsinline autoplay muted loop poster="assets/video/video-cover.jpg" id="bgvid">
+    <source src="assets/video/background-480.mp4" type="video/mp4"> Your browser does not support the video tag.
+  </video>
+  <div class="login-container">
+    <img class="logo" src="assets/img/logo/logo.png" />
+    <form (ngSubmit)="LogIn($event)">
+      <ion-row>
+        <ion-col>
+          <ion-list>
+            <ion-item>
+              <ion-input id="Username"  type="text"  name="Username"  placeholder="Email" [(ngModel)]="Username" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input id="Password" type="Password"  name="Password" placeholder="Password" [(ngModel)]="Password" required></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-button fill="solid" expand="block" color="danger" Type="submit">Login</ion-button>
+      <p><strong>Forgot your password?</strong></p>
+      <p routerLink="/register" fill="solid" expand="block" color="danger" >Register here</p>
+    </form>
+  </div>
 </ion-content>

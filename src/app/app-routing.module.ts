@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: 'list', loadChildren: './list/list.module#ListPageModule', canActivate: [AuthGuard] },
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule'},
   { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule', canActivate: [AuthGuard] },
-  { path: 'game', loadChildren: './game/game.module#GamePageModule', canActivate: [AuthGuard] },
+  { path: 'game', loadChildren: './game/game.module#GamePageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' }
 
 ];
