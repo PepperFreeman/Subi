@@ -9,7 +9,10 @@ const routes: Routes = [
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule'},
   { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule', canActivate: [AuthGuard] },
   { path: 'game', loadChildren: './game/game.module#GamePageModule', canActivate: [AuthGuard]  },
-  { path: 'login', loadChildren: './login/login.module#LoginPageModule' }
+  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
+  // { path: 'edit-profile', loadChildren: './edit-profile/edit-profile.module#EditProfilePageModule' },
+  { path: 'games', loadChildren: './games/games.module#GamesPageModule' }
+
 
 ];
 
