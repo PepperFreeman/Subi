@@ -1,9 +1,9 @@
 <ion-content>
   <video #player playsinline autoplay muted loop poster="assets/video/video-cover.jpg" id="bgvid">
-    <source src="assets/video/background-480.mp4" type="video/mp4"> Your browser does not support the video tag.
+    <source src="assets/video/background-480.mp4" type="video/mp4">
   </video>
   <div class="login-container">
-    <img class="logo" src="assets/img/logo/logo.png" />
+    <img class="logo" src="assets/img/logo/logo_transparent.png" />
     <form (ngSubmit)="LogIn($event)">
       <ion-row>
         <ion-col>
@@ -19,7 +19,7 @@
       </ion-row>
       <ion-button fill="solid" expand="block" color="danger" Type="submit">Login</ion-button>
       <p><strong>Forgot your password?</strong></p>
-      <p routerLink="/register" fill="solid" expand="block" color="danger" >Register here</p>
+      <p routerLink="/register" fill="solid" expand="block" color="danger" style="text-decoration: underline;">Register here</p>
     </form>
   </div>
 </ion-content>
