@@ -3,6 +3,7 @@ import {AuthService} from '../auth.service';
 import {Router} from '@angular/router';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {AlertController} from '@ionic/angular';
+import {User} from 'firebase';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -33,7 +34,33 @@ export class LoginPage implements OnInit {
   }
   ngOnInit() {
   }
+  async RestEmail() {
+    const alert = await this.alertController.create({
+      header: 'Rest Email',
+      subHeader: '',
+      inputs: [
+        {
+          name: 'email',
+          type: 'text',
+          placeholder: 'Please enter your email'
+        }],
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          cssClass: 'secondary'
+        }, {
+          text: 'Okay',
+          handler: data => {
+            this.firebase.auth.sendPasswordResetEmail(data.email);
+          }
+        }
+      ]
+    });
 
+    await alert.present();
+  //  this.firebase.auth.sendPasswordResetEmail(this.Username);
+  }
   LogIn(e) {
     try {
       const logintarget = e.target;

@@ -50,7 +50,6 @@ export class RegisterPage implements OnInit {
           message: 'invalid email/password should be of 6 characters',
           buttons: ['OK']
         });
-
         await alert.present();
       });
     } catch (e) {

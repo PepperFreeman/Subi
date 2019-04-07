@@ -15,8 +15,8 @@ export class GamesPage implements OnInit {
   gameId;
   people;
   total;
-  time;
-  date;
+  GameTime;
+  GameDate;
   UserName;
   Password;
 
@@ -27,26 +27,18 @@ export class GamesPage implements OnInit {
   }
     createGame() {
       try {
-        this.firebaseA.auth.createUserWithEmailAndPassword(this.UserName, this.Password).then(() => {
-          this.userId = this.firebaseA.auth.currentUser;
+
           this.firebaseA.authState.subscribe(auth => {
             // @ts-ignore
             this.FirebaseDB.object(`Games/${auth.uid}`).set({
-              userid: this.userId,
-              gameid: this.gameId,
-              gameType: this.gameType,
+              gameType: this.gameType.toString(),
               playAddress: this.playAddress,
               people: this.people,
-              total: this.total,
-              expired: true,
-              time: this.time,
-              date: this.date
+              time: this.GameTime,
+              date: this.GameDate
             }) .then();
           });
           alert('Create Game Successful!'); this.router.navigate(['/home']);
-        }).catch(() => {
-          alert('invalid address');
-        });
       } catch (e) {
       }
     }

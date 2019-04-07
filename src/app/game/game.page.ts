@@ -7,9 +7,7 @@ import {HomePage} from '../home/home.page';
   styleUrls: ['./game.page.scss'],
 })
 export class GamePage implements OnInit {
-  tab1Root = HomePage;
-  tab2Root = HomePage;
-  tab3Root = HomePage;
+
   constructor() {
    }
 
