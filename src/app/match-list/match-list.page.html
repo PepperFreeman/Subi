@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Match List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-margin no-padding>
+  <ion-list lines="full" *ngFor="let game of listGame">
+    <ion-item>
+      <ion-icon src="../assets/icon/favicon1.svg" slot="start">
+      </ion-icon>
+      <div>
+        <h3>{{game.gameType}}</h3>
+        <p>{{game.date}} {{game.time}}</p>
+        <p>{{game.playAddress}}</p>
+        <p>Number of player: {{game.people}}</p>
+          <ion-button >Regiter</ion-button>
+      </div>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

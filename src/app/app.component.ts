@@ -12,7 +12,7 @@ export class AppComponent {
   public appPages = [
     { title: 'Home', url: '/home', icon: 'home' },
     { title: 'My Profile', url: '/profile', icon: 'home' },
-    { title: 'My games', url: '/games', icon: 'football' },
+    { title: 'My games', url: '/match-list', icon: 'football' },
     { title: 'Settings', url: '/home', icon: 'home' },
     { title: 'Game', url: '/game', icon: 'list'}
   ];

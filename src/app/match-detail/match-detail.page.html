@@ -1,0 +1,96 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<!------ Include the above in your HEAD tag ---------->
+<link rel="stylesheet" href="https://bootswatch.com/4/simplex/bootstrap.min.css"/>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Match Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title mb-4">
+              <div class="d-flex justify-content-start">
+                <div class="image-container">
+                  <img src="../assets/icon/favicon.png" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
+                  <div class="middle">
+                    <!--                    <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change" />-->
+                    <input type="file" style="display: none;" id="profilePicture" name="file" />
+                  </div>
+                </div>
+                <div class="userData ml-3">
+                  <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);">{{currentUser.FirstName}} {{currentUser.LastName}}</a></h2>
+                  <!--                  <h6 class="d-block"><a href="javascript:void(0)">1,500</a> Video Uploads</h6>-->
+                  <!--                  <h6 class="d-block"><a href="javascript:void(0)">300</a> Blog Posts</h6>-->
+                </div>
+                <div class="ml-auto">
+                  <input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Discard Changes" />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                <div class="tab-content ml-1" id="myTabContent">
+                  <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
+
+                    <div class="row">
+                      <div class="col-sm-3 col-md-2 col-5">
+                        <label style="font-weight:bold;">Date</label>
+                      </div>
+                      <div class="col-md-8 col-6">
+                        {{currentUser.FirstName}}
+                      </div>
+                    </div>
+                    <hr />
+
+                    <div class="row">
+                      <div class="col-sm-3 col-md-2 col-5">
+                        <label style="font-weight:bold;">Time</label>
+                      </div>
+                      <div class="col-md-8 col-6">
+                        {{currentUser.LastName}}
+                      </div>
+                    </div>
+                    <hr />
+
+                    <div class="row">
+                      <div class="col-sm-3 col-md-2 col-5">
+                        <label style="font-weight:bold;">Address</label>
+                      </div>
+                      <div class="col-md-8 col-6">
+                        {{currentUser.Address1}}
+                      </div>
+                    </div>
+                    <hr />
+
+                    <div class="row">
+                      <div class="col-sm-3 col-md-2 col-5">
+                        <label style="font-weight:bold;">Number of players</label>
+                      </div>
+                      <div class="col-md-8 col-6">
+                        {{currentUser.City}}
+                      </div>
+                    </div>
+                    <hr />
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
