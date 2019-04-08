@@ -6,7 +6,7 @@
 
 - Yue Zeng      yzk4v@mail.umkc.edu	
 - Anh Nguyen	  lndhf@mail.umkc.edu	
-- Khalid	      kmdk2t@mail.umkc.edu		
+- Khalid Dhabbah      kmdk2t@mail.umkc.edu		
 
 ## Goal
 Our goal is to create an application for android and iOS devices. 
