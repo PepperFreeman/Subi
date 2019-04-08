@@ -10,7 +10,7 @@
 <ion-content no-padding no-margin>
     <div class="grid">
         <div class='grid-cell responsive' *ngFor="let image of items">
-            <button class="square square-100" [ngStyle]="{'background-image': 'url(' + image.url + ')'}" routerLink="/list">
+            <button class="square square-100" [ngStyle]="{'background-image': 'url(' + image.url + ')'}" routerLink="/games">
                 <div class="title">
                     {{image.name}}
                 </div>
